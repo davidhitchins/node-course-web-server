@@ -24,8 +24,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
 // app.use((req, res, next) => {
 //   res.render('maintenance.hbs');
 // });
@@ -40,10 +38,19 @@ hbs.registerHelper('screamIt', (text) => {
   return text.toUpperCase();
 });
 
+//routes
+
 app.get('/', (req, res) => {
   res.render('home.hbs', {
     pageTitle: 'Home Page',
     welcomeMessage: 'Welcome to my website'
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    pageMessage: 'List of projects'
   });
 });
 
